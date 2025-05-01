@@ -22,9 +22,10 @@ weather_data = json.loads(r.text)
 temp_c = weather_data['current']['temp_c']
 condition = weather_data['current']['condition']['text']
 wind_kph = weather_data['current']['wind_kph']
+wind_dir = weather_data['current']['wind_dir']
 
 # Print and speak the result
-weather_report = f"The current temperature in {city} is {temp_c} degrees Celsius with {condition} and wind speed is {wind_kph}."
+weather_report = f"The current temperature in {city} is {temp_c} degrees Celsius with {condition} and wind speed is {wind_kph} direction {wind_dir}."
 print(weather_report)
 
 engine.say(weather_report)
